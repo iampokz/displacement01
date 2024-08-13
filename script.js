@@ -7,10 +7,12 @@ document.getElementById('inputForm').addEventListener('submit', function(event) 
     const a = parseFloat(document.getElementById('a').value);
     const t = parseFloat(document.getElementById('t').value);
 
-    const intervals = 10;
+    const intervals = parseFloat(document.getElementById('inter').value);
+
     const data = [];
 
     for (let i = 0; i <= intervals; i++) {
+        const time = (2*t/ intervals) * i;
         const s = u * time + 0.5 * a * time * time;
         data.push({ x: time, y: s });
     }
